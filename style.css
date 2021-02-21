@@ -27,6 +27,14 @@ body {
     padding-left: 15px;
 }
 
+@media (max-width: 575px) {
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
 .main-title {
     color: #1d202e;
     font-size: 40px;
@@ -198,6 +206,7 @@ body {
 .education,
 .working-experience,
 .skills,
+.english,
 .code {
     padding: 20px 10px;
 }
@@ -216,6 +225,7 @@ body {
 .education__container,
 .working-experience__container,
 .skills__container,
+.english__container,
 .code__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -226,7 +236,8 @@ body {
             align-items: center;
 }
 
-.about-me__description {
+.about-me__description,
+.english__desctiption {
     padding: 15px;
     color: #1d202e;
     font-size: 20px;
@@ -249,4 +260,62 @@ body {
     .code__wrapper {
         font-size: 8px;
     }
+}
+
+.footer-cv {
+}
+
+.navigation {
+    width: 100%;
+    padding: 20px 10px;
+    background-color: #1d202e;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.navigation__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    list-style: none;
+}
+
+@media (max-width: 575px) {
+    .navigation__list {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+}
+
+.navigation__item {}
+@media (max-width: 575px) {
+    .navigation__item:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+
+.navigation__link {
+    padding: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #e6e0e0;
+    border-radius: 50px;
+    background-color: rgba(0, 255, 21, 0.137);
+    border: 1px solid #e6e0e0;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.navigation__link:hover {
+    background-color: rgb(134, 52, 52);
 }
