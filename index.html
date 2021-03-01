@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+             //function check(str, bracketsConfig) { 
+            //console.log(str.trim().split(" ").sort())
+            /*let strElements = str.trim().split(' ');
+            for (let i of strElements) {
+               // console.log(i)
+            }
+
+            let arr = [],
+                arr2 = [];
+            for (let i of bracketsConfig) {
+                arr.push(i.map(a => a.trim()).join('').trim());
+            }
+            console.log(arr)
+
+            for (let i of arr) {
+                if(strElements.indexOf(i) == -1) {
+                    return false;
+                }
+            }
+
+            return true;   */ 
+            /*str = str.split('');
+            let arr = '';
+            console.log(str.sort().join('').trim())
+            
+            for (let i of bracketsConfig) {
+                console.log(i.join(''))
+                arr += i.join('').trim()
+            }
+            console.log(arr)*/
+        //}
+
+        function check(str, bracketsConfig) {
+  let strIsArr = str.split('');
+
+ for (let i = 0; i < strIsArr.length; i++) {
+    for (let j = 0; j < bracketsConfig.length; j++) {
+      if (strIsArr[i] == bracketsConfig[j][1] && strIsArr[i-1] == bracketsConfig[j][0]){
+        strIsArr.splice(i - 1, 2)
+        i = 0
+        break
+      }
+    }
+  }
+
+  
+  
+  return strIsArr < 1 ? true : false
+}
+
+      console.log(check('| () |' ,  [ [ '(' ,  ')' ] ,  [ '|' ,  ' | ' ] ] ));
+    </script>
+</body>
+</html>
